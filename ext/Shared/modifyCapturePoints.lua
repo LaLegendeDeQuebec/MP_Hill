@@ -62,11 +62,11 @@ cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3
 	CreateSpawnPoints(subWorldData, ruHqObjectData, CONFIG.RUHQ.SPAWNS, "RUHQ")
 
 	-- Out of bounds area
-	local usRedzoneVectorData = VolumeVectorShapeData(ResourceManager:FindInstanceByGuid(cqOutOfBoundPartitionGuid, Guid('28BDA22D-1212-4A41-A643-E0215D834F42')))
+	local usRedzoneVectorData = VolumeVectorShapeData(ResourceManager:FindInstanceByGuid(cqOutOfBoundPartitionGuid, Guid('107682E8-2D5E-4EF4-987C-587FECA9B546')))
 	usRedzoneVectorData:MakeWritable()
 	ReplacePoints(usRedzoneVectorData.points, CONFIG.USPLAYZONE)
 
-	local ruRedzoneVectorData = VolumeVectorShapeData(ResourceManager:FindInstanceByGuid(cqOutOfBoundPartitionGuid, Guid('107682E8-2D5E-4EF4-987C-587FECA9B546')))
+	local ruRedzoneVectorData = VolumeVectorShapeData(ResourceManager:FindInstanceByGuid(cqOutOfBoundPartitionGuid, Guid('28BDA22D-1212-4A41-A643-E0215D834F42')))
 	ruRedzoneVectorData:MakeWritable()
 	ReplacePoints(ruRedzoneVectorData.points, CONFIG.RUPLAYZONE)
 end)
