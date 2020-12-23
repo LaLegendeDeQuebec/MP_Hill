@@ -1,7 +1,7 @@
 
 function ModifyCapturePoints()
 
-local cqLogicPartitionGuid = Guid('C76217D7-E5B6-459D-9258-2995AFE8ABFB') -- you need to change this Guid with the partition guid of the gamemode_logic of your map
+local cqLogicPartitionGuid = Guid('2C150869-8533-4032-AD50-CE21141436A9') -- you need to change this Guid with the partition guid of the gamemode_logic of your map
 local cqOutOfBoundPartitionGuid = Guid('061ABAC4-7D42-423F-B8E1-A4789AB79016')
 
 cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3-B464-11E0-A8ED-AC9707C24C08"), Guid('0EBE4C00-9840-4D65-49CB-019C23BBC66B'), function(instance)
