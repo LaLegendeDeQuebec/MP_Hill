@@ -2,7 +2,7 @@
 function ModifyCapturePoints()
 
 local cqLogicPartitionGuid = Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB') -- you need to change this Guid with the partition guid of the gamemode_logic of your map
-
+local cqOutOfBoundPartitionGuid = Guid('061ABAC4-7D42-423F-B8E1-A4789AB79016')
 
 cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3-B464-11E0-A8ED-AC9707C24C08"), Guid('0EBE4C00-9840-4D65-49CB-019C23BBC66B'), function(instance)
 
@@ -62,11 +62,11 @@ cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3
 	CreateSpawnPoints(subWorldData, ruHqObjectData, CONFIG.RUHQ.SPAWNS, "RUHQ")
 
 	-- Out of bounds area
-	local usRedzoneVectorData = VolumeVectorShapeData(ResourceManager:FindInstanceByGuid(cqLogicPartitionGuid, Guid('28BDA22D-1212-4A41-A643-E0215D834F42')))
+	local usRedzoneVectorData = VolumeVectorShapeData(ResourceManager:FindInstanceByGuid(cqOutOfBoundPartitionGuid, Guid('28BDA22D-1212-4A41-A643-E0215D834F42')))
 	usRedzoneVectorData:MakeWritable()
 	ReplacePoints(usRedzoneVectorData.points, CONFIG.USPLAYZONE)
 
-	local ruRedzoneVectorData = VolumeVectorShapeData(ResourceManager:FindInstanceByGuid(cqLogicPartitionGuid, Guid('107682E8-2D5E-4EF4-987C-587FECA9B546')))
+	local ruRedzoneVectorData = VolumeVectorShapeData(ResourceManager:FindInstanceByGuid(cqOutOfBoundPartitionGuid, Guid('107682E8-2D5E-4EF4-987C-587FECA9B546')))
 	ruRedzoneVectorData:MakeWritable()
 	ReplacePoints(ruRedzoneVectorData.points, CONFIG.RUPLAYZONE)
 end)
