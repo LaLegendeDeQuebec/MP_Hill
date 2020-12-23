@@ -1,5 +1,5 @@
 -- Set redzone minimap texture to nil for both teams
-ResourceManager:RegisterInstanceLoadHandler(Guid('601776CA-D1A8-432D-9F86-26BFF9E0EFB3B'), Guid('EA634590-B1EA-4056-8299-21EAF40D3520'), function(instance)
+ResourceManager:RegisterInstanceLoadHandler(Guid('E4DC3E26-D243-11E0-A815-C10C49FFE8B9'), Guid('D1B32EE4-9607-3D70-2797-DF94334158CC'), function(instance)
     if levelName ~= "Levels/MP_012/MP_012" or gameMode ~= "ConquestLarge0" then
 		local caAsset = VeniceUICombatAreaAsset(instance)
 		caAsset:MakeWritable()
@@ -8,7 +8,7 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('601776CA-D1A8-432D-9F86-26BFF9
 	end
 end)
 
-ResourceManager:RegisterInstanceLoadHandler(Guid('65214F82-8127-4ECD-B614-BF3B35C97787'), Guid('B8A18593-D1F7-4794-B96C-B349F3AC6459'), function(instance)
+ResourceManager:RegisterInstanceLoadHandler(Guid('3BCF6175-AFE6-470D-9A6B-8320A0582451'), Guid('B34B86DE-8EA0-4F10-80C5-1E4D5CF9C427'), function(instance)
     if levelName ~= "Levels/MP_012/MP_012" or gameMode ~= "ConquestLarge0" then
 		local caAsset = VeniceUICombatAreaAsset(instance)
 		caAsset:MakeWritable()
@@ -18,12 +18,12 @@ ResourceManager:RegisterInstanceLoadHandler(Guid('65214F82-8127-4ECD-B614-BF3B35
 end)
 
 -- Change flag names
-ResourceManager:RegisterInstanceLoadHandler(Guid("0964415F-1A6E-4BA3-A11D-EEDDF2DB9FD2"), Guid('184EB6A9-E532-8D64-0AC2-551AD903FF96'), function(instance)
+ResourceManager:RegisterInstanceLoadHandler(Guid("8DB9CB2A-2A16-44B8-927D-024F1AD06FCF"), Guid('74D4E354-7D4C-BBE9-007B-6F1ABD2B98C4'), function(instance)
     if levelName ~= "Levels/MP_012/MP_012" or gameMode ~= "ConquestLarge0" then
 		instance = InterfaceDescriptorData (instance)
 		instance:MakeWritable()
-		DataField(instance.fields[15]).value = 'CString "CRIMEA"'
-		DataField(instance.fields[17]).value = 'CString "BAGUETTE"'
-		DataField(instance.fields[18]).value = 'CString "PLAYGROUND"'
+		DataField(instance.fields[15]).value = 'CString "THE PLATEAU"'
+		DataField(instance.fields[17]).value = 'CString "TOP OF THE HILL"'
+		DataField(instance.fields[18]).value = 'CString "MONTAIN SIDE"'
 	end
 end)

@@ -1,7 +1,8 @@
 
 function ModifyCapturePoints()
 
-local cqLogicPartitionGuid = Guid('F5DE48B8-29ED-4E73-B040-82637BE0E81C')
+local cqLogicPartitionGuid = Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB') -- you need to change this Guid with the partition guid of the gamemode_logic of your map
+
 
 cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3-B464-11E0-A8ED-AC9707C24C08"), Guid('0EBE4C00-9840-4D65-49CB-019C23BBC66B'), function(instance)
 
@@ -18,7 +19,7 @@ cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3
 	subWorldData:MakeWritable()
 
 	-- Move flag positions by changing the blueprintTransform of the ReferenceObjectData responsible for creating the flag from blueprint (Gameplay/Level_Setups/Components/CapturePointPrefab)
-	local cpAObjectData = ReferenceObjectData(ResourceManager:FindInstanceByGuid(cqLogicPartitionGuid, CONFIG.CPA.GUID))
+	local cpAObjectData = ReferenceObjectData(ResourceManager:FindInstanceByGuid(cqCaptureAreasPartitionGuid, CONFIG.CPA.GUID))
 	cpAObjectData:MakeWritable()
 	cpAObjectData.blueprintTransform = CONFIG.CPA.POS
 	ReplaceCapZone(subWorldData, cpAObjectData, CONFIG.CPA.CAPZONE)
@@ -27,7 +28,7 @@ cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3
 	CreateSpawnPoints(subWorldData, cpAObjectData, CONFIG.CPA.RUSPAWNS, "RUCP")
 
 
-	local cpBObjectData = ReferenceObjectData(ResourceManager:FindInstanceByGuid(cqLogicPartitionGuid, CONFIG.CPB.GUID))
+	local cpBObjectData = ReferenceObjectData(ResourceManager:FindInstanceByGuid(cqCaptureAreasPartitionGuid, CONFIG.CPB.GUID))
 	cpBObjectData:MakeWritable()
 	--cpBObjectData.blueprint = cpBlueprint
 	cpBObjectData.blueprintTransform = CONFIG.CPB.POS
@@ -37,7 +38,7 @@ cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3
 	CreateSpawnPoints(subWorldData, cpBObjectData, CONFIG.CPB.RUSPAWNS, "RUCP")
 
 
-	local cpCObjectData = ReferenceObjectData(ResourceManager:FindInstanceByGuid(cqLogicPartitionGuid, CONFIG.CPC.GUID))
+	local cpCObjectData = ReferenceObjectData(ResourceManager:FindInstanceByGuid(cqCaptureAreasPartitionGuid, CONFIG.CPC.GUID))
 	cpCObjectData:MakeWritable()
 	--cpCObjectData.blueprint = cpBlueprint
 	cpCObjectData.blueprintTransform = CONFIG.CPC.POS
@@ -61,11 +62,11 @@ cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3
 	CreateSpawnPoints(subWorldData, ruHqObjectData, CONFIG.RUHQ.SPAWNS, "RUHQ")
 
 	-- Out of bounds area
-	local usRedzoneVectorData = VolumeVectorShapeData(ResourceManager:FindInstanceByGuid(cqLogicPartitionGuid, Guid('081BC71A-E784-49FA-9BDA-02FC1354FE48')))
+	local usRedzoneVectorData = VolumeVectorShapeData(ResourceManager:FindInstanceByGuid(cqLogicPartitionGuid, Guid('28BDA22D-1212-4A41-A643-E0215D834F42')))
 	usRedzoneVectorData:MakeWritable()
 	ReplacePoints(usRedzoneVectorData.points, CONFIG.USPLAYZONE)
 
-	local ruRedzoneVectorData = VolumeVectorShapeData(ResourceManager:FindInstanceByGuid(cqLogicPartitionGuid, Guid('11119EDC-CD69-44A9-A5CC-DC7464A984AD')))
+	local ruRedzoneVectorData = VolumeVectorShapeData(ResourceManager:FindInstanceByGuid(cqLogicPartitionGuid, Guid('107682E8-2D5E-4EF4-987C-587FECA9B546')))
 	ruRedzoneVectorData:MakeWritable()
 	ReplacePoints(ruRedzoneVectorData.points, CONFIG.RUPLAYZONE)
 end)
