@@ -19,7 +19,7 @@ cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3
 	subWorldData:MakeWritable()
 
 	-- Move flag positions by changing the blueprintTransform of the ReferenceObjectData responsible for creating the flag from blueprint (Gameplay/Level_Setups/Components/CapturePointPrefab)
-	local cpAObjectData = ReferenceObjectData(ResourceManager:FindInstanceByGuid(cqCaptureAreasPartitionGuid, CONFIG.CPA.GUID))
+	local cpAObjectData = ReferenceObjectData(ResourceManager:FindInstanceByGuid(cqLogicPartitionGuid, CONFIG.CPA.GUID))
 	cpAObjectData:MakeWritable()
 	cpAObjectData.blueprintTransform = CONFIG.CPA.POS
 	ReplaceCapZone(subWorldData, cpAObjectData, CONFIG.CPA.CAPZONE)
@@ -28,7 +28,7 @@ cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3
 	CreateSpawnPoints(subWorldData, cpAObjectData, CONFIG.CPA.RUSPAWNS, "RUCP")
 
 
-	local cpBObjectData = ReferenceObjectData(ResourceManager:FindInstanceByGuid(cqCaptureAreasPartitionGuid, CONFIG.CPB.GUID))
+	local cpBObjectData = ReferenceObjectData(ResourceManager:FindInstanceByGuid(cqLogicPartitionGuid, CONFIG.CPB.GUID))
 	cpBObjectData:MakeWritable()
 	--cpBObjectData.blueprint = cpBlueprint
 	cpBObjectData.blueprintTransform = CONFIG.CPB.POS
@@ -38,7 +38,7 @@ cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3
 	CreateSpawnPoints(subWorldData, cpBObjectData, CONFIG.CPB.RUSPAWNS, "RUCP")
 
 
-	local cpCObjectData = ReferenceObjectData(ResourceManager:FindInstanceByGuid(cqCaptureAreasPartitionGuid, CONFIG.CPC.GUID))
+	local cpCObjectData = ReferenceObjectData(ResourceManager:FindInstanceByGuid(cqLogicPartitionGuid, CONFIG.CPC.GUID))
 	cpCObjectData:MakeWritable()
 	--cpCObjectData.blueprint = cpBlueprint
 	cpCObjectData.blueprintTransform = CONFIG.CPC.POS
