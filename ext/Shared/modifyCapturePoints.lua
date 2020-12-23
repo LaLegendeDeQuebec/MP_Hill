@@ -1,12 +1,12 @@
 
 function ModifyCapturePoints()
 
-local cqLogicPartitionGuid = Guid('28279A3B-7E9C-4320-ACBE-6CD9F24A7ABB') -- you need to change this Guid with the partition guid of the gamemode_logic of your map
+local cqLogicPartitionGuid = Guid('C76217D7-E5B6-459D-9258-2995AFE8ABFB') -- you need to change this Guid with the partition guid of the gamemode_logic of your map
 local cqOutOfBoundPartitionGuid = Guid('061ABAC4-7D42-423F-B8E1-A4789AB79016')
 
 cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3-B464-11E0-A8ED-AC9707C24C08"), Guid('0EBE4C00-9840-4D65-49CB-019C23BBC66B'), function(instance)
 
-	if SharedUtils:GetCurrentGameMode() ~= "ConquestLarge0" or SharedUtils:GetLevelName() ~= "Levels/MP_012/MP_012" then
+	if SharedUtils:GetCurrentGameMode() ~= "ConquestSmall0" or SharedUtils:GetLevelName() ~= "Levels/MP_012/MP_012" then
 		return
 	end
 	-- CapturePoints B and C normally use a 4m flagpole because they have to fit inside the metro. 
@@ -15,7 +15,7 @@ cpBlueprintCallback = ResourceManager:RegisterInstanceLoadHandler(Guid("6FF061D3
 
 	-- This SubWorldData (Levels/MP_Subway/Conquest_Small) is the parent that contains the data used to create the gamemode on MP_Subway.
 	-- The SubWorldDatas connections are what links different types of data together.
-	local subWorldData = SubWorldData(ResourceManager:SearchForDataContainer("Levels/MP_012/Conquest_Large"))
+	local subWorldData = SubWorldData(ResourceManager:SearchForDataContainer("Levels/MP_012/Conquest_Small"))
 	subWorldData:MakeWritable()
 
 	-- Move flag positions by changing the blueprintTransform of the ReferenceObjectData responsible for creating the flag from blueprint (Gameplay/Level_Setups/Components/CapturePointPrefab)
