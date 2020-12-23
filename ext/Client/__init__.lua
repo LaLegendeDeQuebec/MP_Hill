@@ -19,11 +19,11 @@ end)
 
 -- Change flag names
 --ResourceManager:RegisterInstanceLoadHandler(Guid("8DB9CB2A-2A16-44B8-927D-024F1AD06FCF"), Guid('74D4E354-7D4C-BBE9-007B-6F1ABD2B98C4'), function(instance)
-   -- if levelName ~= "Levels/MP_012/MP_012" or gameMode ~= "ConquestLarge0" then
-		--instance = InterfaceDescriptorData (instance)
-		--instance:MakeWritable()
-		--DataField(instance.fields[15]).value = 'CString "THE PLATEAU"'
-		--DataField(instance.fields[17]).value = 'CString "TOP OF THE HILL"'
-		--DataField(instance.fields[18]).value = 'CString "MONTAIN SIDE"'
-	--end
+ --   if levelName ~= "Levels/MP_012/MP_012" or gameMode ~= "ConquestLarge0" then
+--		instance = InterfaceDescriptorData (instance)
+--		instance:MakeWritable()
+--		DataField(instance.fields[15]).value = 'CString "THE PLATEAU"'
+--		DataField(instance.fields[17]).value = 'CString "TOP OF THE HILL"'
+--		DataField(instance.fields[18]).value = 'CString "MONTAIN SIDE"'
+--	end
 --end)
