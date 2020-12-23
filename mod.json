@@ -1,0 +1,12 @@
+{
+	"Name": "MP_Hill",
+	"Authors": ["LaLegendeDeQuebec"],
+	"Description": "Play a one flag map on the top of the hill. Probably dosen't work at the moment",
+	"URL": "",
+	"Version": "0.1.0",
+	"HasWebUI": false,
+	"HasVeniceEXT": true,
+	"Dependencies": {
+		"veniceext": "^1.0.0"
+	}
+}
