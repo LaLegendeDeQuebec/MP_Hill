@@ -8,7 +8,7 @@ Events:Subscribe('Level:LoadResources', function(levelName, gameMode, isDedicate
 	local levelDestroyEvent = Events:Subscribe('Level:Destroy', OnLevelDestroy)
 
 	-- Don't do anything if the wrong level/gamemode is loaded
-	if levelName ~= "Levels/MP_012/MP_012" or gameMode ~= "ConquestLarge0" then
+	if levelName ~= "Levels/MP_012/MP_012" or gameMode ~= "ConquestSmall0" then
 		levelDestroyEvent:Unsubscribe()
 		return
 	end
