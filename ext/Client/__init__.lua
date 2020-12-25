@@ -22,8 +22,8 @@ ResourceManager:RegisterInstanceLoadHandler(Guid("8DB9CB2A-2A16-44B8-927D-024F1A
     if levelName ~= "Levels/MP_012/MP_012" or gameMode ~= "ConquestSmall0" then
  	instance = InterfaceDescriptorData (instance)
 		instance:MakeWritable()
-		DataField(instance.fields[15]).value = 'CString "THE PLATEAU"'
-		DataField(instance.fields[17]).value = 'CString "TOP OF THE HILL"'
-		DataField(instance.fields[18]).value = 'CString "MONTAIN SIDE"'
+		DataField(instance.fields[24]).value = 'CString "THE PLATEAU"'
+		DataField(instance.fields[25]).value = 'CString "TOP OF THE HILL"'
+		DataField(instance.fields[26]).value = 'CString "MONTAIN SIDE"'
 	end
 end)
